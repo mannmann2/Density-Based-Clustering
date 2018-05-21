@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Marker Clustering</title>
+    <style>
+      #map {
+        height: 100%;
+      }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div><script>
+
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 2,
+          center: {lat: 25, lng: 15}
+        });
+
+        // Create an array of alphabetical characters used to label the markers.
+        //var labels = ["Abidjan, Côte D'Ivoire", 'Addis Abeba, Ethiopia', 'Ahmadabad, India', 'Aleppo, Syria', 'Alexandria, Egypt', 'Ankara, Turkey', 'Baghdad, Iraq', 'Bangalore, India', 'Bangkok, Thailand', 'Belo Horizonte, Brazil', 'Berlin, Germany', 'Bogotá, Colombia', 'Bombay, India', 'Brasília, Brazil', 'Cairo, Egypt', 'Calcutta, India', 'Cali, Colombia', 'Cape Town, South Africa', 'Casablanca, Morocco', 'Changchun, China', 'Chengdu, China', 'Chicago, United States', 'Chongqing, China', 'Dakar, Senegal', 'Dalian, China', 'Dar Es Salaam, Tanzania', 'Delhi, India', 'Dhaka, Bangladesh', 'Durban, South Africa', 'Faisalabad, Pakistan', 'Fortaleza, Brazil', 'Gizeh, Egypt', 'Guangzhou, China', 'Harare, Zimbabwe', 'Harbin, China', 'Ho Chi Minh City, Vietnam', 'Hyderabad, India', 'Ibadan, Nigeria', 'Istanbul, Turkey', 'Izmir, Turkey', 'Jaipur, India', 'Jakarta, Indonesia', 'Jiddah, Saudi Arabia', 'Jinan, China', 'Kabul, Afghanistan', 'Kano, Nigeria', 'Kanpur, India', 'Karachi, Pakistan', 'Kiev, Ukraine', 'Kinshasa, Congo (Democratic Republic Of The)', 'Lagos, Nigeria', 'Lahore, Pakistan', 'Lakhnau, India', 'Lima, Peru', 'London, United Kingdom', 'Los Angeles, United States', 'Luanda, Angola', 'Madras, India', 'Madrid, Spain', 'Manila, Philippines', 'Mashhad, Iran', 'Melbourne, Australia', 'Mexico, Mexico', 'Mogadishu, Somalia', 'Montreal, Canada', 'Moscow, Russia', 'Nagoya, Japan', 'Nagpur, India', 'Nairobi, Kenya', 'Nanjing, China', 'New Delhi, India', 'New York, United States', 'Paris, France', 'Peking, China', 'Pune, India', 'Rangoon, Burma', 'Rio De Janeiro, Brazil', 'Riyadh, Saudi Arabia', 'Rome, Italy', 'São Paulo, Brazil', 'Saint Petersburg, Russia', 'Salvador, Brazil', 'Santiago, Chile', 'Santo Domingo, Dominican Republic', 'Seoul, South Korea', 'Shanghai, China', 'Shenyang, China', 'Singapore, Singapore', 'Surabaya, Indonesia', 'Surat, India', 'Sydney, Australia', 'Taipei, Taiwan', 'Taiyuan, China', 'Tangshan, China', 'Tianjin, China', 'Tokyo, Japan', 'Toronto, Canada', 'Umm Durman, Sudan', 'Wuhan, China', 'Xian, China'];
+        var markers = locations.map(function(location, i) {
+          return new google.maps.Marker({
+            position: location
+            //label: labels[i % labels.length]
+          });
+        });
+
+        // Add a marker clusterer to manage the markers.
+        var markerCluster = new MarkerClusterer(map, markers,
+        {imagePath:'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+      }
+      var locations =  [{'lat': 5.63, 'lng': -3.23}, {'lat': 8.84, 'lng': 38.11}, {'lat': 23.31, 'lng': 72.52}, {'lat': 36.17, 'lng': 37.79}, {'lat': 31.35, 'lng': 30.16}, {'lat': 39.38, 'lng': 33.29}, {'lat': 32.95, 'lng': 45.0}, {'lat': 12.05, 'lng': 77.26}, {'lat': 13.66, 'lng': 99.91}, {'lat': -20.09, 'lng': -44.36}, {'lat': 52.24, 'lng': 13.14}, {'lat': 4.02, 'lng': -74.73}, {'lat': 18.48, 'lng': 72.68}, {'lat': -15.27, 'lng': -47.5}, {'lat': 29.74, 'lng': 31.38}, {'lat': 23.31, 'lng': 88.25}, {'lat': 4.02, 'lng': -76.34}, {'lat': -32.95, 'lng': 18.19}, {'lat': 32.95, 'lng': -6.7}, {'lat': 44.2, 'lng': 125.22}, {'lat': 31.35, 'lng': 103.66}, {'lat': 42.59, 'lng': -87.27}, {'lat': 29.74, 'lng': 107.08}, {'lat': 15.27, 'lng': -17.5}, {'lat': 39.38, 'lng': 120.69}, {'lat': -7.23, 'lng': 39.73}, {'lat': 28.13, 'lng': 77.27}, {'lat': 23.31, 'lng': 90.0}, {'lat': -29.74, 'lng': 31.38}, {'lat': 31.35, 'lng': 73.51}, {'lat': -4.02, 'lng': -40.98}, {'lat': 29.74, 'lng': 31.38}, {'lat': 23.31, 'lng': 112.72}, {'lat': -18.48, 'lng': 30.42}, {'lat': 45.81, 'lng': 125.77}, {'lat': 10.45, 'lng': 107.18}, {'lat': 16.87, 'lng': 78.7}, {'lat': 7.23, 'lng': 4.05}, {'lat': 40.99, 'lng': 29.82}, {'lat': 37.78, 'lng': 26.44}, {'lat': 26.52, 'lng': 75.22}, {'lat': -5.63, 'lng': 106.55}, {'lat': 21.7, 'lng': 38.94}, {'lat': 36.17, 'lng': 117.35}, {'lat': 34.56, 'lng': 70.05}, {'lat': 12.05, 'lng': 8.22}, {'lat': 26.52, 'lng': 80.6}, {'lat': 24.92, 'lng': 67.39}, {'lat': 50.63, 'lng': 31.69}, {'lat': -4.02, 'lng': 15.27}, {'lat': 5.63, 'lng': 3.23}, {'lat': 31.35, 'lng': 73.51}, {'lat': 26.52, 'lng': 80.6}, {'lat': -12.05, 'lng': -77.26}, {'lat': 52.24, 'lng': -0.0}, {'lat': 34.56, 'lng': -118.7}, {'lat': -8.84, 'lng': 13.78}, {'lat': 13.66, 'lng': 80.09}, {'lat': 40.99, 'lng': -4.26}, {'lat': 15.27, 'lng': 120.83}, {'lat': 36.17, 'lng': 59.67}, {'lat': -37.78, 'lng': 144.41}, {'lat': 20.09, 'lng': -98.96}, {'lat': 2.41, 'lng': 45.8}, {'lat': 45.81, 'lng': -72.69}, {'lat': 55.45, 'lng': 36.85}, {'lat': 34.56, 'lng': 136.22}, {'lat': 21.7, 'lng': 78.75}, {'lat': -0.8, 'lng': 36.16}, {'lat': 31.35, 'lng': 118.74}, {'lat': 28.13, 'lng': 77.27}, {'lat': 40.99, 'lng': -74.56}, {'lat': 49.03, 'lng': 2.45}, {'lat': 39.38, 'lng': 116.53}, {'lat': 18.48, 'lng': 74.37}, {'lat': 16.87, 'lng': 95.44}, {'lat': -23.31, 'lng': -42.82}, {'lat': 24.92, 'lng': 46.11}, {'lat': 42.59, 'lng': 13.09}, {'lat': -23.31, 'lng': -46.31}, {'lat': 60.27, 'lng': 29.19}, {'lat': -13.66, 'lng': -38.81}, {'lat': -32.95, 'lng': -69.89}, {'lat': 18.48, 'lng': -69.3}, {'lat': 37.78, 'lng': 126.1}, {'lat': 31.35, 'lng': 120.63}, {'lat': 40.99, 'lng': 123.55}, {'lat': 0.8, 'lng': 103.66}, {'lat': -7.23, 'lng': 112.7}, {'lat': 21.7, 'lng': 73.56}, {'lat': -34.56, 'lng': 151.78}, {'lat': 24.92, 'lng': 122.36}, {'lat': 37.78, 'lng': 111.86}, {'lat': 37.78, 'lng': 113.9}, {'lat': 39.38, 'lng': 116.53}, {'lat': 36.17, 'lng': 139.23}, {'lat': 44.2, 'lng': -80.5}, {'lat': 15.27, 'lng': 32.5}, {'lat': 29.74, 'lng': 114.46}, {'lat': 34.56, 'lng': 108.97}]
+    </script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDX0mEB3j8ILwJXUbJJmuEOwgCTy1lnUu4&callback=initMap">
+    </script>
+  </body>
+</html>
